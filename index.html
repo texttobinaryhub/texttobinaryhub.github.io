@@ -1,0 +1,1040 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="google-site-verification" content="HoWofmErOOKMSn8dHeXvBTb5cGoEBEB1rQ7Y3CrUYgY" />
+    <link rel="canonical" href="https://texttobinaryhub.github.io/" />
+    <meta property="og:url" content="https://texttobinaryhub.github.io/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="data:," />
+    <title>Text to Binary Converter — Free Online Tool | TextToBinaryHub</title>
+    <meta name="description" content="Convert text to binary and binary back to text instantly with TextToBinaryHub. Free online text to binary converter, binary decoder, text to hex and ASCII code tools, plus beginner-friendly guides to binary code." />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="TextToBinaryHub" />
+    <meta property="og:title" content="Text to Binary Converter — Free Online Tool | TextToBinaryHub" />
+    <meta property="og:description" content="Turn any text into 8-bit binary code and decode binary back into readable text. Includes hex and ASCII tools and plain-English guides to how binary works." />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Text to Binary Converter | TextToBinaryHub" />
+    <meta name="twitter:description" content="Free text to binary converter and binary to text decoder, with hex and ASCII tools and beginner guides to binary code." />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "TextToBinaryHub",
+      "url": "https://texttobinaryhub.github.io/",
+      "description": "Free online text to binary converter, binary to text decoder, hex and ASCII tools, and beginner-friendly guides to binary code.",
+      "inLanguage": "en"
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --bg: #eef5f3;
+        --bg-deep: #dcebe7;
+        --surface: #ffffff;
+        --surface-2: #f4faf8;
+        --ink: #0b2422;
+        --ink-soft: #33524d;
+        --muted: #5d7a74;
+        --line: #c9ddd7;
+        --teal: #0b6e63;
+        --teal-strong: #075048;
+        --teal-bright: #0e8577;
+        --accent-soft: #d9efe9;
+        --code-bg: #0a2e2a;
+        --code-ink: #b9f0e2;
+        --warn-bg: #fdf3e3;
+        --warn-ink: #7a5410;
+        --warn-line: #ecd9ae;
+        --shadow: 0 10px 30px rgba(7, 60, 52, 0.10);
+        --radius: 14px;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #06231f;
+          --bg-deep: #041915;
+          --surface: #0a2f2a;
+          --surface-2: #0d3831;
+          --ink: #e7f4f0;
+          --ink-soft: #bcd8d1;
+          --muted: #8fb3aa;
+          --line: #175046;
+          --teal: #2fbfa9;
+          --teal-strong: #7fe3d0;
+          --teal-bright: #35cdb4;
+          --accent-soft: #0f4239;
+          --code-bg: #03150f;
+          --code-ink: #a9ecd9;
+          --warn-bg: #3a2f14;
+          --warn-ink: #f0d48a;
+          --warn-line: #6b5a26;
+          --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+        }
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+        font-size: 17px;
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+      }
+      button, [role="button"], select, summary, input:not([type="checkbox"], [type="radio"]) { min-height: 2.25rem; }
+      a { color: var(--teal); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+      a:hover { color: var(--teal-bright); }
+      .wrap { max-width: 1060px; margin: 0 auto; padding: 0 20px; }
+
+      /* Header */
+      header.site {
+        position: sticky; top: 0; z-index: 50;
+        background: var(--bg-deep);
+        border-bottom: 1px solid var(--line);
+      }
+      .nav {
+        display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
+        padding-top: 10px; padding-bottom: 10px;
+      }
+      .brand {
+        font-family: "Sora", sans-serif; font-weight: 800; font-size: 1.25rem;
+        color: var(--ink); text-decoration: none; letter-spacing: -0.02em;
+        display: inline-flex; align-items: center; gap: 10px; min-height: 2.25rem;
+      }
+      .brand .bits {
+        font-family: "IBM Plex Mono", monospace; font-size: 0.72rem; font-weight: 600;
+        background: var(--teal); color: #fff; border-radius: 6px; padding: 3px 7px; letter-spacing: 0.04em;
+      }
+      @media (prefers-color-scheme: dark) { .brand .bits { color: #04231e; } }
+      nav.main { margin-left: auto; display: flex; flex-wrap: wrap; gap: 2px; }
+      nav.main a {
+        color: var(--ink-soft); text-decoration: none; font-weight: 600; font-size: 0.95rem;
+        padding: 8px 12px; border-radius: 8px; display: inline-flex; align-items: center; min-height: 2.25rem;
+      }
+      nav.main a:hover { background: var(--accent-soft); color: var(--ink); }
+      nav.main a.active { background: var(--teal); color: #fff; }
+      @media (prefers-color-scheme: dark) { nav.main a.active { color: #04231e; } }
+
+      /* Hero */
+      .hero { padding: 44px 0 8px; }
+      .hero h1 {
+        font-family: "Sora", sans-serif; font-weight: 800; letter-spacing: -0.025em;
+        font-size: clamp(1.9rem, 4.6vw, 2.9rem); line-height: 1.12; margin: 0 0 14px;
+        max-width: 22ch;
+      }
+      .hero p.lede { font-size: 1.13rem; color: var(--ink-soft); max-width: 62ch; margin: 0 0 6px; }
+      .hero .sample {
+        font-family: "IBM Plex Mono", monospace; font-size: 0.92rem; color: var(--teal-strong);
+        margin-top: 14px; word-break: break-all;
+      }
+
+      /* Tools */
+      .tools { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin: 26px 0 8px; }
+      @media (max-width: 820px) { .tools { grid-template-columns: 1fr; } }
+      .tool {
+        background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+        box-shadow: var(--shadow); padding: 22px;
+      }
+      .tool h2 { font-family: "Sora", sans-serif; font-size: 1.22rem; margin: 0 0 4px; letter-spacing: -0.01em; }
+      .tool .sub { color: var(--muted); font-size: 0.93rem; margin: 0 0 14px; }
+      label.f-label { display: block; font-weight: 600; font-size: 0.88rem; margin: 12px 0 6px; color: var(--ink-soft); }
+      textarea, .output {
+        width: 100%; border: 1px solid var(--line); border-radius: 10px; background: var(--surface-2);
+        color: var(--ink); font-family: "IBM Plex Mono", monospace; font-size: 0.95rem; line-height: 1.55;
+        padding: 12px 14px; resize: vertical;
+      }
+      textarea:focus { outline: 2px solid var(--teal); outline-offset: 1px; border-color: transparent; }
+      textarea { min-height: 104px; }
+      .output {
+        min-height: 104px; max-height: 260px; overflow: auto; white-space: pre-wrap; word-break: break-all;
+        background: var(--code-bg); color: var(--code-ink); border-color: transparent;
+      }
+      .output:empty::before { content: attr(data-placeholder); color: var(--muted); opacity: 0.75; }
+      .output.plain { background: var(--surface-2); color: var(--ink); border-color: var(--line); word-break: normal; }
+      .btnrow { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; align-items: center; }
+      button.btn {
+        font-family: inherit; font-weight: 700; font-size: 0.95rem; cursor: pointer;
+        border-radius: 9px; padding: 9px 18px; border: 1px solid var(--teal);
+        background: var(--teal); color: #fff; min-height: 2.5rem;
+      }
+      @media (prefers-color-scheme: dark) { button.btn { color: #04231e; } }
+      button.btn:hover { background: var(--teal-bright); border-color: var(--teal-bright); }
+      button.btn.ghost { background: transparent; color: var(--teal); }
+      button.btn.ghost:hover { background: var(--accent-soft); }
+      .counts { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 12px; font-size: 0.88rem; color: var(--muted); }
+      .counts b { color: var(--ink); font-family: "IBM Plex Mono", monospace; font-weight: 600; }
+      .err {
+        display: none; margin-top: 12px; background: var(--warn-bg); color: var(--warn-ink);
+        border: 1px solid var(--warn-line); border-radius: 9px; padding: 10px 14px; font-size: 0.92rem;
+      }
+      .err.show { display: block; }
+      .mini-tools { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin: 22px 0 10px; }
+      @media (max-width: 820px) { .mini-tools { grid-template-columns: 1fr; } }
+      .mini-tools textarea { min-height: 74px; }
+      .mini-tools .output { min-height: 74px; }
+
+      /* Prose */
+      main section.prose { padding: 30px 0 6px; max-width: 780px; }
+      main section.prose.wide { max-width: none; }
+      h2.sec {
+        font-family: "Sora", sans-serif; font-weight: 700; letter-spacing: -0.02em;
+        font-size: clamp(1.45rem, 3vw, 1.9rem); line-height: 1.2; margin: 26px 0 12px;
+      }
+      .prose h3 { font-family: "Sora", sans-serif; font-size: 1.15rem; margin: 24px 0 8px; letter-spacing: -0.01em; }
+      .prose p { margin: 0 0 14px; color: var(--ink-soft); }
+      .prose p strong, .prose li strong { color: var(--ink); }
+      .prose ul, .prose ol { margin: 0 0 16px; padding-left: 24px; color: var(--ink-soft); }
+      .prose li { margin-bottom: 7px; }
+      .prose code, p code, li code {
+        font-family: "IBM Plex Mono", monospace; font-size: 0.88em;
+        background: var(--accent-soft); color: var(--ink); border-radius: 5px; padding: 1px 6px;
+        word-break: break-all;
+      }
+      .steps { counter-reset: step; list-style: none; padding-left: 0; }
+      .steps li { counter-increment: step; position: relative; padding-left: 46px; margin-bottom: 14px; }
+      .steps li::before {
+        content: counter(step); position: absolute; left: 0; top: 1px;
+        width: 30px; height: 30px; border-radius: 50%; background: var(--teal); color: #fff;
+        font-family: "Sora", sans-serif; font-weight: 700; font-size: 0.9rem;
+        display: flex; align-items: center; justify-content: center;
+      }
+      @media (prefers-color-scheme: dark) { .steps li::before { color: #04231e; } }
+      table.ascii { border-collapse: collapse; margin: 6px 0 20px; font-size: 0.95rem; }
+      table.ascii th, table.ascii td { border: 1px solid var(--line); padding: 7px 14px; text-align: left; }
+      table.ascii th { background: var(--surface-2); font-family: "Sora", sans-serif; font-size: 0.85rem; }
+      table.ascii td.mono { font-family: "IBM Plex Mono", monospace; }
+      .guide-list { list-style: none; padding: 0; margin: 8px 0 10px; }
+      .guide-list li { padding: 14px 0; border-bottom: 1px solid var(--line); margin: 0; }
+      .guide-list li:last-child { border-bottom: none; }
+      .guide-list a { font-family: "Sora", sans-serif; font-weight: 700; font-size: 1.08rem; text-decoration: none; }
+      .guide-list a:hover { text-decoration: underline; }
+      .guide-list p { margin: 4px 0 0; font-size: 0.96rem; }
+
+      /* Article / page views */
+      .page-head { padding: 40px 0 4px; max-width: 780px; }
+      .page-head .crumb { font-size: 0.9rem; color: var(--muted); margin-bottom: 10px; }
+      .page-head h1 { font-family: "Sora", sans-serif; font-weight: 800; letter-spacing: -0.025em; font-size: clamp(1.8rem, 4.4vw, 2.6rem); line-height: 1.15; margin: 0 0 12px; }
+      .page-head .standfirst { font-size: 1.1rem; color: var(--ink-soft); margin: 0; }
+      article.prose { max-width: 780px; padding-bottom: 10px; }
+      article.prose h2 { font-family: "Sora", sans-serif; font-size: 1.4rem; letter-spacing: -0.015em; margin: 30px 0 10px; }
+      .faq-item { border-bottom: 1px solid var(--line); padding: 16px 0; }
+      .faq-item h3 { margin: 0 0 6px; }
+      .faq-item p { margin: 0; }
+      .next-guide { margin: 34px 0 6px; padding: 18px 20px; background: var(--accent-soft); border-radius: var(--radius); max-width: 780px; }
+      .next-guide p { margin: 0; color: var(--ink-soft); }
+      .view { display: none; }
+      .view.active { display: block; }
+
+      /* Footer */
+      footer.site { margin-top: 56px; background: var(--bg-deep); border-top: 1px solid var(--line); }
+      .foot { padding: 34px 20px 40px; display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 28px; }
+      @media (max-width: 720px) { .foot { grid-template-columns: 1fr; } }
+      .foot h4 { font-family: "Sora", sans-serif; margin: 0 0 10px; font-size: 1rem; }
+      .foot p { color: var(--muted); font-size: 0.93rem; margin: 0; }
+      .foot ul { list-style: none; padding: 0; margin: 0; }
+      .foot li { margin-bottom: 4px; }
+      .foot a { color: var(--ink-soft); text-decoration: none; display: inline-flex; align-items: center; min-height: 2rem; padding: 2px 0; }
+      .foot a:hover { color: var(--teal); text-decoration: underline; }
+      .foot .legal { grid-column: 1 / -1; border-top: 1px solid var(--line); padding-top: 16px; font-size: 0.88rem; color: var(--muted); display: flex; flex-wrap: wrap; gap: 6px 22px; }
+    </style>
+  </head>
+  <body>
+    <header class="site">
+      <div class="wrap nav">
+        <a class="brand" href="#/"><span class="bits">0101</span>TextToBinaryHub</a>
+        <nav class="main" aria-label="Main navigation">
+          <a href="#/" data-nav="home">Converter</a>
+          <a href="#/guides" data-nav="guides">Guides</a>
+          <a href="#/about" data-nav="about">About</a>
+          <a href="#/faq" data-nav="faq">FAQ</a>
+          <a href="#/contact" data-nav="contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <!-- ============ HOME ============ -->
+      <div class="view" id="view-home">
+        <div class="hero">
+          <h1>Text to Binary Converter</h1>
+          <p class="lede">Type any word, sentence or message and watch it turn into the 0s and 1s a computer actually stores — then paste binary back in and decode it into readable text. Everything runs in your browser; nothing you type is sent anywhere.</p>
+          <p class="sample">“Hi” in binary is 01001000 01101001 — try it below.</p>
+        </div>
+
+        <div class="tools">
+          <div class="tool" aria-labelledby="t2b-h">
+            <h2 id="t2b-h">Text to Binary</h2>
+            <p class="sub">Each character becomes one 8-bit binary byte, separated by spaces.</p>
+            <label class="f-label" for="t2b-in">Your text</label>
+            <textarea id="t2b-in" placeholder="Type or paste text here, e.g. Hello" autocomplete="off" spellcheck="false"></textarea>
+            <label class="f-label" for="t2b-out">Binary result</label>
+            <div class="output" id="t2b-out" data-placeholder="Your binary code will appear here…" aria-live="polite"></div>
+            <div class="btnrow">
+              <button class="btn" type="button" data-copy="t2b-out">Copy binary</button>
+              <button class="btn ghost" type="button" id="t2b-clear">Clear</button>
+              <button class="btn ghost" type="button" id="t2b-send">Send to decoder ↓</button>
+            </div>
+            <div class="counts">
+              <span>Characters: <b id="t2b-chars">0</b></span>
+              <span>Bytes: <b id="t2b-bytes">0</b></span>
+              <span>Bits: <b id="t2b-bits">0</b></span>
+            </div>
+          </div>
+
+          <div class="tool" aria-labelledby="b2t-h">
+            <h2 id="b2t-h">Binary to Text</h2>
+            <p class="sub">Paste binary code — with or without spaces — and decode it back into text.</p>
+            <label class="f-label" for="b2t-in">Your binary code</label>
+            <textarea id="b2t-in" placeholder="Paste binary here, e.g. 01001000 01101001" autocomplete="off" spellcheck="false"></textarea>
+            <label class="f-label" for="b2t-out">Decoded text</label>
+            <div class="output plain" id="b2t-out" data-placeholder="Your decoded text will appear here…" aria-live="polite"></div>
+            <div class="err" id="b2t-err" role="alert"></div>
+            <div class="btnrow">
+              <button class="btn" type="button" data-copy="b2t-out">Copy text</button>
+              <button class="btn ghost" type="button" id="b2t-clear">Clear</button>
+            </div>
+            <div class="counts">
+              <span>Bits entered: <b id="b2t-bits">0</b></span>
+              <span>Bytes decoded: <b id="b2t-bytes">0</b></span>
+              <span>Characters: <b id="b2t-chars">0</b></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mini-tools">
+          <div class="tool" aria-labelledby="hex-h">
+            <h2 id="hex-h">Text to Hex</h2>
+            <p class="sub">The same bytes, written in base 16 — the shorthand programmers use.</p>
+            <label class="f-label" for="hex-in">Your text</label>
+            <textarea id="hex-in" placeholder="Type text, e.g. Hi" autocomplete="off" spellcheck="false"></textarea>
+            <label class="f-label" for="hex-out">Hexadecimal result</label>
+            <div class="output" id="hex-out" data-placeholder="Hex values will appear here…" aria-live="polite"></div>
+            <div class="btnrow">
+              <button class="btn" type="button" data-copy="hex-out">Copy hex</button>
+              <button class="btn ghost" type="button" id="hex-clear">Clear</button>
+            </div>
+            <div class="counts">
+              <span>Characters: <b id="hex-chars">0</b></span>
+              <span>Bytes: <b id="hex-bytes">0</b></span>
+            </div>
+          </div>
+
+          <div class="tool" aria-labelledby="ascii-h">
+            <h2 id="ascii-h">Text to ASCII Codes</h2>
+            <p class="sub">See the decimal ASCII (character) code behind every character you type.</p>
+            <label class="f-label" for="ascii-in">Your text</label>
+            <textarea id="ascii-in" placeholder="Type text, e.g. Hi" autocomplete="off" spellcheck="false"></textarea>
+            <label class="f-label" for="ascii-out">Decimal codes</label>
+            <div class="output" id="ascii-out" data-placeholder="Decimal codes will appear here…" aria-live="polite"></div>
+            <div class="btnrow">
+              <button class="btn" type="button" data-copy="ascii-out">Copy codes</button>
+              <button class="btn ghost" type="button" id="ascii-clear">Clear</button>
+            </div>
+            <div class="counts">
+              <span>Characters: <b id="ascii-chars">0</b></span>
+              <span>Codes: <b id="ascii-codes">0</b></span>
+            </div>
+          </div>
+        </div>
+
+        <section class="prose">
+          <h2 class="sec">What is binary code?</h2>
+          <p>Binary is a way of writing numbers — and, through numbers, everything else — using only two symbols: <strong>0</strong> and <strong>1</strong>. The counting system you learned at school, decimal, uses ten symbols (0–9) because humans happen to have ten fingers. Computers use two symbols because their insides are built from tiny switches, and a switch only has two comfortable states: off and on. Off becomes 0, on becomes 1, and from that humble pair of digits engineers build every photo, song, game and web page in existence.</p>
+          <p>Each single 0 or 1 is called a <strong>bit</strong>. One bit on its own can only say two things, but bits are almost never alone. Group eight of them together and you get a <strong>byte</strong>, which can hold 256 different patterns — more than enough to give every letter, digit and punctuation mark its own code. That is exactly what the converter above does: it takes each character of your text, finds its number, and writes that number out as an 8-bit binary byte. If binary is new to you, our <a href="#/guide/what-is-binary-code">beginner's guide to binary code</a> walks through the idea slowly, with everyday examples.</p>
+          <p>Binary is not a recent invention, either. The mathematician Gottfried Wilhelm Leibniz described the system in 1703, inspired in part by the ancient Chinese I Ching. It took the arrival of electronic computers in the twentieth century — machines that genuinely think in on/off pulses — for Leibniz's curiosity to become the foundation of all modern technology.</p>
+
+          <h2 class="sec">How computers store text</h2>
+          <p>Here is the problem every computer faces: memory chips can only hold numbers, yet people insist on typing letters. The solution is an agreement — a giant lookup table that says “when we store the number 65, we mean the letter A.” When you press the A key, your keyboard sends the number 65 to the computer, the computer stores 65, and when the file is opened later, the screen turns 65 back into the shape of an A. The letter itself was never inside the machine; only its number was.</p>
+          <p>That number, stored in binary, is <code>01000001</code>. Eight switches, some on and some off, and your computer reads them as “capital A.” Every character in the message you typed into the converter above went through exactly this process. Lowercase letters, digits, spaces and punctuation all have their own numbers — the space bar, for instance, is 32, or <code>00100000</code> in binary. A full sentence is simply a long train of these bytes, one after another, which is why a longer message produces a longer stream of 0s and 1s.</p>
+          <p>Modern text adds one more layer. The original lookup table, ASCII, only covered English. Today's standard, <strong>UTF-8</strong>, keeps the same numbers for English letters but can use extra bytes for everything else — accented letters, Arabic and Urdu script, Chinese characters, even emoji. This converter encodes your text as UTF-8 bytes, so characters beyond plain English still convert correctly; they simply take two, three or four bytes instead of one. Our guide on <a href="#/guide/ascii-explained">how computers turn letters into binary</a> explains this in full.</p>
+
+          <h2 class="sec">ASCII explained, briefly</h2>
+          <p>ASCII — the American Standard Code for Information Interchange — was published in 1963 so that machines from different manufacturers could finally agree on what number meant what letter. Before ASCII, one company's “A” could be another company's “%”, and exchanging text was a small nightmare. The standard defines 128 characters: the English alphabet in upper and lower case, the digits 0–9, common punctuation, and a set of invisible control characters left over from the age of teletype machines.</p>
+          <p>A few patterns make ASCII easy to remember. Capital letters run from 65 (A) to 90 (Z). Lowercase letters run from 97 (a) to 122 (z) — exactly 32 more, and that gap of 32 is no accident: in binary, it means upper and lower case differ by a single bit, which made converting between them trivially cheap for early hardware. Digits run from 48 (0) to 57 (9). Type a few words into the <a href="#/" data-scroll-tool>ASCII codes tool</a> above and you will see these ranges appear in your own name. For the complete story, read <a href="#/guide/ascii-explained">ASCII explained: how computers turn letters into binary</a>.</p>
+
+          <h2 class="sec">How the conversion works, step by step</h2>
+          <p>Converting text to binary is a mechanical process with no guesswork. Here is exactly what happens when you type into the converter:</p>
+          <ol class="steps">
+            <li><strong>Split the text into characters.</strong> The converter takes your message one character at a time — letters, digits, spaces and punctuation each count as one character.</li>
+            <li><strong>Look up each character's number.</strong> Using the UTF-8 encoding (which matches ASCII for English text), every character is matched to its code number: H is 72, i is 105, a space is 32.</li>
+            <li><strong>Rewrite each number in base 2.</strong> The decimal number is converted into binary by dividing by two repeatedly and collecting the remainders — or, in practice, by reading off which powers of two (128, 64, 32, 16, 8, 4, 2, 1) add up to it.</li>
+            <li><strong>Pad to eight bits.</strong> Leading zeros are added so every byte is exactly eight digits long. 72 becomes <code>01001000</code>, never a ragged <code>1001000</code>, so the bytes can be told apart later.</li>
+            <li><strong>Join the bytes with spaces.</strong> The finished bytes are laid out in order, separated by spaces for readability. Decoding runs the same steps in reverse: split into bytes, read each byte as a number, look the number up, and print the character.</li>
+          </ol>
+          <p>If you want to try the number-reading part by hand — it is easier than it looks — our guide on <a href="#/guide/how-to-read-binary">how to read binary numbers</a> teaches the “powers of two” trick in about five minutes of practice. And when the streams of 0s and 1s start to blur together, programmers switch to hexadecimal, a compact shorthand covered in <a href="#/guide/binary-vs-hexadecimal">binary vs hexadecimal: what is the difference?</a></p>
+
+          <h2 class="sec">Why learn binary at all?</h2>
+          <p>Honestly? Because it is the one idea underneath everything digital, and once it clicks, a dozen other mysteries dissolve with it. File sizes stop being magic (“a kilobyte is roughly a thousand bytes — a thousand little eight-switch patterns”). IP addresses, colour codes in web design, permission settings on servers, the reason old games had 255 of everything — all of it is binary wearing different clothes. Students meet it in computing classes, programmers bump into it in low-level code, and puzzle-makers love it because a string of 0s and 1s looks like a secret code while hiding plain English in sight.</p>
+          <p>It is also, quietly, fun. People write their names in binary on whiteboards, hide messages in birthday cards, get binary tattoos, and stitch it into jewellery. If that side of the subject appeals to you, start with <a href="#/guide/fun-ways-to-use-binary">fun ways to use binary code</a> — then come back and convert your own name with the tool at the top of this page. Questions along the way are answered in our <a href="#/faq">frequently asked questions</a>, and the <a href="#/about">about page</a> explains who runs TextToBinaryHub and why.</p>
+        </section>
+
+        <section class="prose wide">
+          <h2 class="sec">Guides to binary code</h2>
+          <ul class="guide-list">
+            <li>
+              <a href="#/guide/what-is-binary-code">What Is Binary Code? A Beginner's Guide</a>
+              <p>Start here: what binary is, why computers use only two digits, and how bits and bytes fit together — no maths background needed.</p>
+            </li>
+            <li>
+              <a href="#/guide/ascii-explained">How Computers Turn Letters into Binary (ASCII Explained)</a>
+              <p>The story of the lookup table that lets machines store language, from 1960s teletypes to modern UTF-8 and emoji.</p>
+            </li>
+            <li>
+              <a href="#/guide/how-to-read-binary">How to Read Binary Numbers</a>
+              <p>Learn the powers-of-two method and practise reading real bytes by hand, including a trick for odd and even numbers.</p>
+            </li>
+            <li>
+              <a href="#/guide/binary-vs-hexadecimal">Binary vs Hexadecimal: What Is the Difference?</a>
+              <p>Why programmers write F3 instead of 11110011, and how to translate between binary, decimal and hex without tears.</p>
+            </li>
+            <li>
+              <a href="#/guide/fun-ways-to-use-binary">Fun Ways to Use Binary Code (Names, Messages, Tattoos)</a>
+              <p>Binary names on jewellery, secret messages, classroom games, wedding rings and tattoos — plus how to check yours before it's permanent.</p>
+            </li>
+          </ul>
+        </section>
+      </div>
+
+      <!-- ============ GUIDES INDEX ============ -->
+      <div class="view" id="view-guides">
+        <div class="page-head">
+          <p class="crumb"><a href="#/">Home</a> › Guides</p>
+          <h1>Binary Code Guides</h1>
+          <p class="standfirst">Five long, plain-English guides that take you from “what is a bit?” to reading bytes by hand and hiding messages in them. Read them in order for a gentle course, or dip into whichever question brought you here.</p>
+        </div>
+        <section class="prose wide">
+          <ul class="guide-list">
+            <li>
+              <a href="#/guide/what-is-binary-code">What Is Binary Code? A Beginner's Guide</a>
+              <p>The foundations: two digits, eight-bit bytes, and why the whole digital world is built from switches that are either on or off.</p>
+            </li>
+            <li>
+              <a href="#/guide/ascii-explained">How Computers Turn Letters into Binary (ASCII Explained)</a>
+              <p>How a machine that only understands numbers learned to store Shakespeare — the ASCII table, its clever patterns, and the UTF-8 upgrade.</p>
+            </li>
+            <li>
+              <a href="#/guide/how-to-read-binary">How to Read Binary Numbers</a>
+              <p>A practical skill: place values in base 2, reading a byte in seconds, and converting back from decimal to binary.</p>
+            </li>
+            <li>
+              <a href="#/guide/binary-vs-hexadecimal">Binary vs Hexadecimal: What Is the Difference?</a>
+              <p>Base 2 meets base 16. Why hex exists, how the two systems map onto each other, and where you have already seen hex today.</p>
+            </li>
+            <li>
+              <a href="#/guide/fun-ways-to-use-binary">Fun Ways to Use Binary Code (Names, Messages, Tattoos)</a>
+              <p>The playful side: names in binary, coded notes, binary clocks, classroom tricks and permanent ink — checked twice.</p>
+            </li>
+          </ul>
+          <p>Ready to experiment? Head back to the <a href="#/">text to binary converter</a> and put the guides into practice with your own words.</p>
+        </section>
+      </div>
+
+      <!-- ============ GUIDE 1 ============ -->
+      <div class="view" id="view-guide-1">
+        <div class="page-head">
+          <p class="crumb"><a href="#/">Home</a> › <a href="#/guides">Guides</a> › What Is Binary Code?</p>
+          <h1>What Is Binary Code? A Beginner's Guide</h1>
+          <p class="standfirst">Binary is the simplest writing system ever put to serious work: two symbols, endless possibilities. This guide explains what it is, why computers chose it, and how a handful of 0s and 1s becomes text, pictures and music.</p>
+        </div>
+        <article class="prose">
+          <h2>Two digits are enough</h2>
+          <p>Every number system is just a set of symbols and a rule for combining them. Decimal — the system you use for prices, ages and addresses — has ten symbols: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9. When you run out of symbols you start a new column: after 9 comes 10, after 99 comes 100. Binary follows the <em>same rule</em> with only two symbols, 0 and 1. Running out happens much sooner — after 1 comes 10 — but the machinery is identical. Counting in binary goes: 0, 1, 10, 11, 100, 101, 110, 111, 1000. Those are simply the numbers zero through eight, dressed differently.</p>
+          <p>The word “binary” comes from the Latin <em>bi</em>, meaning two. A binary choice is a choice between two things: yes or no, on or off, true or false. That two-ness is the whole secret, and it is also why binary suits machines so perfectly.</p>
+
+          <h2>Why computers think in twos</h2>
+          <p>Inside a computer, information travels as tiny electrical signals. Engineers could have built machines that distinguish ten voltage levels to match decimal digits — some early machines tried — but telling ten similar voltages apart, millions of times a second, in hot and noisy hardware, is asking for mistakes. Two states are far easier to keep apart: current flowing or not flowing, voltage high or low, a microscopic pit on a disc or smooth surface. A switch that is definitely on or definitely off rarely gets misread.</p>
+          <p>So the transistor — the tiny switch at the heart of every chip, billions of them per processor — lives a binary life. Software arranges those switches into patterns, and the patterns, read as binary numbers, become the raw material for everything else. Your photos are binary. This web page reached your screen as binary. The song stuck in your head this morning was, for a while, binary too.</p>
+
+          <h2>Bits, bytes and bigger bites</h2>
+          <p>A single binary digit is called a <strong>bit</strong>, short for “binary digit.” One bit distinguishes two possibilities. Two bits distinguish four (00, 01, 10, 11). Each extra bit doubles the possibilities: three bits give 8 patterns, four give 16, and eight bits give 256. That eight-bit group is so useful it earned its own name — a <strong>byte</strong> — and became the standard unit of computer storage.</p>
+          <p>Why does 256 matter? Because it is comfortably more than the number of characters in the English writing system: 26 lowercase letters, 26 capitals, 10 digits and a few dozen punctuation marks. One byte per character, and a machine can store any English text ever written. Bigger files are just bigger piles of bytes: a kilobyte is about a thousand bytes, a megabyte about a million, a gigabyte about a billion. A novel of plain text is a few hundred kilobytes — a few hundred thousand bytes, each one an eight-bit pattern standing for a single character.</p>
+
+          <h2>From switches to sentences</h2>
+          <p>Numbers alone do not make text; you also need an agreement about which number stands for which character. That agreement is a character encoding, and the most famous is ASCII, which assigns A the number 65, B the number 66, and so on. Store 65 in binary — <code>01000001</code> — and every computer on Earth knows you mean “A.” Our companion guide, <a href="#/guide/ascii-explained">how computers turn letters into binary</a>, tells that story in detail, including how the modern UTF-8 standard extended the idea to every language and emoji on the planet.</p>
+          <p>The <a href="#/">text to binary converter</a> on our home page performs this exact trick live. Type “cat” and you get three bytes: <code>01100011 01100001 01110100</code>. Nothing about the word “cat” lives in those digits — no whiskers, no fur. They are three numbers (99, 97, 116) that the ASCII agreement maps to c, a and t. Meaning, in computing, is almost always a shared agreement layered on top of numbers.</p>
+
+          <h2>Binary beyond text</h2>
+          <p>Once you accept that numbers can stand for letters, the rest of the digital world falls into place. A digital photo is a grid of pixels, and each pixel is three numbers — how much red, green and blue it contains — each stored as a byte. A sound recording is a long list of numbers describing the height of a sound wave, sampled thousands of times per second. A program is a list of numbers that the processor reads as instructions: this one means “add,” that one means “jump.” Different agreements, same two digits underneath.</p>
+          <p>This is why binary deserves its reputation as the alphabet of computing. It is not that computers are obsessed with 0 and 1 for their own sake; it is that two-state switches are reliable, and anything you can turn into numbers, you can turn into switch patterns. Text just happens to be the friendliest example, because the numbers involved are small enough to check by hand.</p>
+
+          <h2>A short history in three beats</h2>
+          <p>The system predates computers by centuries. Gottfried Wilhelm Leibniz published his description of binary arithmetic in 1703, arguing that all numbers could be built from unity and nothing — he found the idea philosophically beautiful, and even designed (but never built) a machine that calculated with marbles and holes. In the 1850s, George Boole developed an algebra of true and false that maps neatly onto binary digits; “Boolean” logic still runs every search filter and if-statement today. Finally, in 1937, Claude Shannon showed that electrical circuits could perform Boolean logic — the insight that welded binary arithmetic to physical switches and made the modern computer inevitable.</p>
+          <p>So when you convert a word with our <a href="#/">converter tool</a>, you are using a notation older than the light bulb to operate the most advanced machines ever built. Few ideas get to be both.</p>
+
+          <h2>What to learn next</h2>
+          <p>You now know what binary is and why it won. The natural next step is reading it yourself: our guide on <a href="#/guide/how-to-read-binary">how to read binary numbers</a> teaches the place-value trick that turns <code>01101000</code> into 104 in seconds. After that, <a href="#/guide/binary-vs-hexadecimal">binary vs hexadecimal</a> shows the shorthand programmers use when the 0s and 1s get too long to love. Welcome to the bottom layer of the digital world — it is friendlier down here than it looks.</p>
+          <div class="next-guide">
+            <p><strong>Next guide:</strong> <a href="#/guide/ascii-explained">How Computers Turn Letters into Binary (ASCII Explained)</a> — the lookup table that lets machines store language.</p>
+          </div>
+        </article>
+      </div>
+
+      <!-- ============ GUIDE 2 ============ -->
+      <div class="view" id="view-guide-2">
+        <div class="page-head">
+          <p class="crumb"><a href="#/">Home</a> › <a href="#/guides">Guides</a> › ASCII Explained</p>
+          <h1>How Computers Turn Letters into Binary (ASCII Explained)</h1>
+          <p class="standfirst">Computers store numbers, not letters. The bridge between the two is a humble lookup table agreed in 1963 — and its fingerprints are still on every message you send today.</p>
+        </div>
+        <article class="prose">
+          <h2>The problem: machines that can't read</h2>
+          <p>A computer's memory is a vast row of cells, each holding a number. There is nowhere in the hardware for a letter to live. So from the earliest days of computing, engineers faced a translation problem: if a user types “A”, which number should the machine store, and how will another machine — perhaps built by a rival company — know that the number means “A” and not “%” or “7”?</p>
+          <p>In the 1950s every manufacturer answered differently. IBM machines, teletype machines and university machines each spoke their own character codes, and moving text between systems meant error-prone conversion, when it was possible at all. What the industry needed was a single shared dictionary. It got one in 1963, when the American Standards Association published ASCII: the American Standard Code for Information Interchange.</p>
+
+          <h2>What ASCII actually is</h2>
+          <p>ASCII is a table of 128 entries, numbered 0 to 127. Each entry pairs a number with a character: 65 is A, 66 is B, 97 is a, 48 is the digit 0, 32 is a space, and 33 is an exclamation mark. Seven bits are enough to count to 127, so ASCII characters were stored in seven bits, usually padded to a full byte with a leading zero — which is why the <a href="#/">converter on our home page</a> shows A as <code>01000001</code> rather than <code>1000001</code>.</p>
+          <p>The first 32 numbers are not printable characters at all. They are <strong>control characters</strong> — instructions for the teletype machines ASCII was designed around. Number 7 meant “ring the bell” (some terminals genuinely had one). Number 10 is the line feed that starts a new line; number 13, carriage return, slid the print head back to the margin. You still meet two of these daily: every time you press Enter, your computer is juggling codes 10 and 13 in arrangements that differ between operating systems, a fossil of the teletype age embedded in modern text files.</p>
+
+          <h2>The clever patterns hiding in the table</h2>
+          <p>ASCII was designed, not accumulated, and its layout rewards a close look. Capital letters occupy 65–90 in alphabetical order, so sorting numbers automatically sorts letters. Lowercase letters sit at 97–122 — exactly 32 higher than their capitals. Thirty-two is 2<sup>5</sup>, a single bit position, so turning A (<code>01000001</code>) into a (<code>01100001</code>) means flipping one bit. Early hardware could change case with a single electrical nudge, and programmers still exploit the trick.</p>
+          <p>The digits are equally neat: the character “0” is 48, “1” is 49, up to “9” at 57. Subtract 48 from a digit character and you get its numeric value — a conversion so cheap it is nearly free. Even the humble space, at 32, sits just before all the punctuation and letters, which is why spaces sort before words in so many programs. Here is a pocket version of the table for the characters people ask about most:</p>
+          <table class="ascii">
+            <tr><th>Character</th><th>Decimal</th><th>Binary</th></tr>
+            <tr><td>Space</td><td class="mono">32</td><td class="mono">00100000</td></tr>
+            <tr><td>! </td><td class="mono">33</td><td class="mono">00100001</td></tr>
+            <tr><td>0</td><td class="mono">48</td><td class="mono">00110000</td></tr>
+            <tr><td>9</td><td class="mono">57</td><td class="mono">00111001</td></tr>
+            <tr><td>A</td><td class="mono">65</td><td class="mono">01000001</td></tr>
+            <tr><td>Z</td><td class="mono">90</td><td class="mono">01011010</td></tr>
+            <tr><td>a</td><td class="mono">97</td><td class="mono">01100001</td></tr>
+            <tr><td>z</td><td class="mono">122</td><td class="mono">01111010</td></tr>
+          </table>
+          <p>Try the <a href="#/">ASCII codes tool</a> on the home page with your own name and you will see these ranges appear immediately: capitals in the 60s–80s, lowercase in the high 90s and beyond.</p>
+
+          <h2>When 128 characters weren't enough</h2>
+          <p>ASCII is proudly American, and it shows. There is no é for French, no ü for German, no £-sign arguments to settle (the pound sign had to fight for a slot in national variants), and absolutely nothing for the billions of people writing in Arabic, Urdu, Hindi, Chinese, Japanese or Korean. Through the 1980s, different countries and vendors bolted extra characters onto the unused upper half of the byte (128–255), producing a patchwork of incompatible “extended ASCII” code pages. A file written in one code page opened as gibberish in another — the mojibake era, whose corrupted-text artefacts still surface in old documents today.</p>
+          <p>The fix arrived in two parts. First, <strong>Unicode</strong> assigned a unique number — a code point — to every character in every writing system, plus symbols, mathematical notation and, eventually, emoji: well over 140,000 entries and counting. Second, <strong>UTF-8</strong> defined how to store those numbers as bytes in a way that kept ASCII files perfectly valid: characters 0–127 stay one byte with the same values ASCII gave them, while anything higher is assembled from two to four bytes following a strict pattern. That backward compatibility is why UTF-8 quietly conquered the world — today it encodes the overwhelming majority of web pages, including this one.</p>
+
+          <h2>What this means for the converter</h2>
+          <p>Our <a href="#/">text to binary converter</a> encodes your input as UTF-8 bytes. For plain English text, the result is exactly classic ASCII in binary dress: one byte per character. Type “café”, though, and the é comes out as two bytes (<code>11000011 10101001</code>) — UTF-8 stretching to cover a character ASCII never knew. An emoji takes four bytes. The byte counter under the tool tells you which case you are in: if the byte count matches the character count, your text is pure ASCII; if bytes outnumber characters, some characters needed the extended treatment.</p>
+          <p>It is worth pausing on how elegant the survival of ASCII is. A standard written for machines that printed on paper, in a country that assumed English, still forms the foundation layer of global text sixty years later — not by force, but because its designers left clean patterns and room to grow. Every text message you have ever sent began as numbers from this table or its Unicode descendants.</p>
+
+          <h2>Keep exploring</h2>
+          <p>To see the numbers side of the story, read <a href="#/guide/how-to-read-binary">how to read binary numbers</a> and decode a few bytes by hand. Or compare the byte patterns here with their compact hexadecimal form in <a href="#/guide/binary-vs-hexadecimal">binary vs hexadecimal</a> — the same table, written for human eyes.</p>
+          <div class="next-guide">
+            <p><strong>Next guide:</strong> <a href="#/guide/how-to-read-binary">How to Read Binary Numbers</a> — the place-value trick that makes any byte readable in seconds.</p>
+          </div>
+        </article>
+      </div>
+
+      <!-- ============ GUIDE 3 ============ -->
+      <div class="view" id="view-guide-3">
+        <div class="page-head">
+          <p class="crumb"><a href="#/">Home</a> › <a href="#/guides">Guides</a> › How to Read Binary Numbers</p>
+          <h1>How to Read Binary Numbers</h1>
+          <p class="standfirst">Reading binary is a party trick with a serious core: one simple idea — place values that double — turns any string of 0s and 1s into a number you can understand. This guide teaches the method and gives you bytes to practise on.</p>
+        </div>
+        <article class="prose">
+          <h2>Place value: the idea you already know</h2>
+          <p>Think about the decimal number 352. You read it instantly, but what you are really doing is place-value arithmetic: 3 hundreds, 5 tens and 2 ones, added together. Each position is worth ten times the one to its right, because decimal has ten digits. Binary works identically, except each position is worth <em>two</em> times the one to its right, because binary has two digits. The places in a binary number, reading from the right, are worth 1, 2, 4, 8, 16, 32, 64, 128, and they keep doubling for as long as the number runs.</p>
+          <p>That is the entire method. To read a binary number, write the doubling values over its digits, keep the values where the digit is 1, ignore the values where it is 0, and add up what remains. The sum is the number in decimal. Nothing else is ever required — no tables, no memorisation beyond the doubling sequence.</p>
+
+          <h2>A worked example, slowly</h2>
+          <p>Take the byte <code>01101000</code>. Line up the place values above it:</p>
+          <p><code>128&nbsp;&nbsp;64&nbsp;&nbsp;32&nbsp;&nbsp;16&nbsp;&nbsp;8&nbsp;&nbsp;4&nbsp;&nbsp;2&nbsp;&nbsp;1</code><br /><code>&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;1&nbsp;&nbsp;0&nbsp;&nbsp;0&nbsp;&nbsp;0</code></p>
+          <p>The 1s sit under 64, 32 and 8. Add them: 64 + 32 + 8 = <strong>104</strong>. So <code>01101000</code> is the number 104. And because 104 is the ASCII code for the letter “h” — a fact from our <a href="#/guide/ascii-explained">ASCII guide</a> — this byte is a lowercase h waiting for a computer to display it. You have just read a letter with your eyes, the way a machine does.</p>
+          <p>Try another: <code>01000010</code>. The 1s sit under 64 and 2, giving 66 — ASCII for the letter B. Once the doubling sequence (1, 2, 4, 8, 16, 32, 64, 128) is in your head, most bytes take under ten seconds. With practice you will start recognising common patterns on sight: letters live between 65 and 122, so text bytes almost always begin with 010 or 011.</p>
+
+          <h2>Small numbers first</h2>
+          <p>If eight bits feel like a lot, start with four — a half-byte called a <em>nibble</em>, because computer science enjoys a pun. The places are 8, 4, 2, 1. Read these:</p>
+          <ul>
+            <li><code>0101</code> → 4 + 1 = <strong>5</strong></li>
+            <li><code>1001</code> → 8 + 1 = <strong>9</strong></li>
+            <li><code>1111</code> → 8 + 4 + 2 + 1 = <strong>15</strong></li>
+            <li><code>0010</code> → <strong>2</strong> (leading zeros change nothing, just as 007 is still seven)</li>
+          </ul>
+          <p>Four bits count from 0 to 15, which is why a nibble pairs naturally with hexadecimal — one hex digit per nibble, as the <a href="#/guide/binary-vs-hexadecimal">binary vs hexadecimal guide</a> explains.</p>
+
+          <h2>Two quick sanity checks</h2>
+          <p><strong>The last bit tells you odd or even.</strong> The rightmost place is worth 1, and every other place is even. So a binary number is odd exactly when it ends in 1, and even when it ends in 0 — the same test as decimal's last digit, but simpler. <code>01101000</code> ends in 0, and 104 is indeed even.</p>
+          <p><strong>Count the ones for a rough size.</strong> A byte with a single 1 is a pure power of two: 1, 2, 4, 8 and so on up to 128. A byte full of ones, <code>11111111</code>, is 255 — the largest value one byte can hold, and a number you will meet constantly in computing, from colour values to the 255-character limits in old software.</p>
+
+          <h2>Going the other way: decimal to binary</h2>
+          <p>Reversing the process is a subtraction game. To write 104 in binary, find the largest power of two that fits: 64 fits, leaving 40. The next, 32, fits, leaving 8. Sixteen does not fit in 8, so that bit is 0. Eight fits exactly, leaving 0, so every remaining bit is 0. Reading off the fits and misses — 64 yes, 32 yes, 16 no, 8 yes, 4 no, 2 no, 1 no, and the 128 place is 0 because 104 is smaller than 128 — gives <code>01101000</code>. The <a href="#/">converter</a> does this for every character instantly, but doing a few by hand is what turns the method from trivia into instinct.</p>
+
+          <h2>Common beginner mistakes</h2>
+          <p>Most errors come from three places. First, reading left to right with the values backwards — always anchor the 1s place at the <em>right</em> end. Second, treating binary digits like decimal ones mid-sum: in <code>1010</code>, the answer is 10, but that is a coincidence of addition (8 + 2), not because the digits “say” ten. Third, forgetting that leading zeros are free: <code>101</code>, <code>0101</code> and <code>00000101</code> are all the number 5, which is exactly why text bytes are padded to eight bits — so decoders can slice a long stream into bytes without ambiguity.</p>
+          <p>Practise with the <a href="#/">binary to text decoder</a>: convert a word, then read the first byte by hand and check your sum against an ASCII table. Ten minutes of this and binary stops looking like the Matrix and starts looking like what it is — ordinary numbers in a two-symbol coat.</p>
+          <div class="next-guide">
+            <p><strong>Next guide:</strong> <a href="#/guide/binary-vs-hexadecimal">Binary vs Hexadecimal: What Is the Difference?</a> — the shorthand that tames long binary numbers.</p>
+          </div>
+        </article>
+      </div>
+
+      <!-- ============ GUIDE 4 ============ -->
+      <div class="view" id="view-guide-4">
+        <div class="page-head">
+          <p class="crumb"><a href="#/">Home</a> › <a href="#/guides">Guides</a> › Binary vs Hexadecimal</p>
+          <h1>Binary vs Hexadecimal: What Is the Difference?</h1>
+          <p class="standfirst">Same numbers, different costumes. Binary is how machines store values; hexadecimal is how humans manage to talk about those values without going cross-eyed. Here is how the two systems relate — and why you have already used hex today.</p>
+        </div>
+        <article class="prose">
+          <h2>It is all place value</h2>
+          <p>Binary, decimal and hexadecimal are not different kinds of number; they are different <em>bases</em> — different counts of symbols used with the same place-value machinery from our <a href="#/guide/how-to-read-binary">guide to reading binary</a>. Binary is base 2 (symbols 0–1, places double). Decimal is base 10 (symbols 0–9, places multiply by ten). Hexadecimal is base 16: sixteen symbols, and places that multiply by sixteen — 1, 16, 256, 4096 and beyond.</p>
+          <p>Sixteen symbols require six that decimal does not have, so hexadecimal borrows letters: after 9 comes A (ten), B (eleven), C (twelve), D (thirteen), E (fourteen) and F (fifteen). The number written “FF” in hex is not a word or an abbreviation; it is fifteen sixteens plus fifteen ones — 255 in decimal. Letters in hex are digits, nothing more mysterious than that.</p>
+
+          <h2>Why programmers keep both</h2>
+          <p>Binary is precise but verbose. The byte <code>11110011</code> takes eight characters to say one small number, and a modern memory address in binary runs to 64 digits — a wall of 0s and 1s in which a single typo hides invisibly. Hexadecimal compresses exactly this problem away, because sixteen is two to the power of four: <strong>one hex digit is always exactly four bits</strong>. Group any binary number into fours from the right and each group becomes one hex digit. <code>1111 0011</code> becomes F, then 3: <strong>F3</strong>. Two characters instead of eight, with zero information lost and conversion possible at a glance.</p>
+          <p>That clean four-bit fit is the entire reason hex exists in computing. Decimal, for all its familiarity, slices bytes awkwardly — a byte holds 0–255, a range with no tidy relationship to powers of ten — so programmers reaching for a compact notation chose the base that matches the machine's own grouping. When you see hex in the wild, you are looking at binary that has been folded into quarters for human convenience.</p>
+
+          <h2>You have already used hex today</h2>
+          <p>Hexadecimal hides in plain sight all over everyday technology:</p>
+          <ul>
+            <li><strong>Colour codes.</strong> Every colour on the web is written as three hex bytes: #FF5733 is red 255, green 87, blue 51. The deep teal of this website is a hex code of exactly this kind.</li>
+            <li><strong>Text encodings.</strong> The <a href="#/">text to hex tool</a> on our home page shows your text as hex bytes — “Hi” becomes <code>48 69</code>, the same values as ASCII 72 and 105, in base 16.</li>
+            <li><strong>MAC and IPv6 addresses.</strong> Network hardware identifiers like <code>3C:7A:9F</code> and IPv6 addresses like <code>2001:db8::1</code> are hex throughout.</li>
+            <li><strong>Memory and errors.</strong> Crash messages, file signatures and memory dumps speak hex because the people reading them need bytes, not decimals.</li>
+          </ul>
+
+          <h2>Converting between the three</h2>
+          <p><strong>Binary to hex:</strong> group the bits into fours from the right (pad the left group with zeros if needed), then write each group as its value 0–15 using A–F above nine. <code>0100 1000</code> → 4, 8 → <strong>48</strong> — the letter H, whose ASCII code 72 is 48 in hex. Notice how the byte splits into two nibbles and each converts independently; there is no carrying or long division anywhere.</p>
+          <p><strong>Hex to binary:</strong> reverse it — expand every hex digit into exactly four bits. <code>6C</code> → <code>0110 1100</code>. Forgetting the leading zeros is the one classic error: C is <code>1100</code>, but 6 must become <code>0110</code>, not <code>110</code>, or the byte collapses.</p>
+          <p><strong>Hex to decimal:</strong> use place values 1, 16, 256. F3 is (15 × 16) + 3 = 243. And <strong>decimal to hex</strong> is repeated division by 16, collecting remainders — the same algorithm as decimal-to-binary from the <a href="#/guide/how-to-read-binary">reading binary guide</a>, with a bigger divisor.</p>
+
+          <h2>Which one should you use?</h2>
+          <p>Use the base that matches your audience. Talking to a machine, or learning how machines work: binary, because it shows the actual switches. Talking to other humans about bytes, colours or addresses: hex, because it is four times shorter and errors stand out. Doing everyday arithmetic: decimal, because your brain has thirty years of practice in it. None of the three is “the real number” — 255, <code>11111111</code> and FF are one value in three notations, and fluency is simply knowing which coat it is wearing.</p>
+          <p>Try it yourself: type a word into the <a href="#/">text to binary converter</a>, then into the hex tool just beneath it, and compare the outputs group by group. Watching the same bytes fold from eight digits into two is the fastest way to make the relationship permanent.</p>
+          <div class="next-guide">
+            <p><strong>Next guide:</strong> <a href="#/guide/fun-ways-to-use-binary">Fun Ways to Use Binary Code</a> — names, secret messages, tattoos and other excellent excuses to use all this.</p>
+          </div>
+        </article>
+      </div>
+
+      <!-- ============ GUIDE 5 ============ -->
+      <div class="view" id="view-guide-5">
+        <div class="page-head">
+          <p class="crumb"><a href="#/">Home</a> › <a href="#/guides">Guides</a> › Fun Ways to Use Binary Code</p>
+          <h1>Fun Ways to Use Binary Code (Names, Messages, Tattoos)</h1>
+          <p class="standfirst">Binary looks like a secret code, hides plain English in plain sight, and carries just enough nerd credibility to be charming. Here are the best ways people actually use it — and how to make sure your binary says what you think it says.</p>
+        </div>
+        <article class="prose">
+          <h2>Your name in binary</h2>
+          <p>The classic first project: convert your name and look at it. “Alex” becomes <code>01000001 01101100 01100101 01111000</code>. Names are short, personal and instantly checkable, which makes them perfect binary material. People print them on classroom walls, set them as forum signatures, use them as passwords' <em>inspiration</em> (never the password itself — binary names are far too guessable), and teach children to write them as a first taste of how encoding works.</p>
+          <p>A refinement worth knowing: capitals and lowercase letters produce different bytes, because ASCII gives them different numbers (A is 65, a is 97 — see the <a href="#/guide/ascii-explained">ASCII guide</a>). “Alex” and “ALEX” are entirely different bit patterns, so decide on your capitalisation before anything gets printed, engraved or inked.</p>
+
+          <h2>Secret messages that hide in plain sight</h2>
+          <p>A page of 0s and 1s reads as decoration to almost everyone, which makes binary a gentle, low-tech cipher for notes that are meant to be semi-private rather than truly secret: birthday cards with a coded message inside, wedding invitations with the couple's initials in binary along the border, treasure-hunt clues, escape-room puzzles and geocaching waypoints. The sender converts with a <a href="#/">text to binary converter</a>; the receiver pastes into the decoder on the same page and watches English fall out of the digits. It delights precisely because the “code” is no code at all — just an encoding anyone can learn in five minutes from our <a href="#/guide/how-to-read-binary">reading guide</a>.</p>
+          <p>Honesty requires one caveat: binary is an <em>encoding</em>, not <em>encryption</em>. Anyone who recognises it can decode it with the tool at the top of this page in seconds. Use it for surprises and games, never for anything genuinely private.</p>
+
+          <h2>Binary jewellery, rings and clothing</h2>
+          <p>Binary compresses beautifully into physical patterns, because a bit can be anything with two states: bead or gap, knot or space, raised dot or flat. Jewellers sell necklaces where beads spell a name in binary along a cord, and wedding rings engraved inside with a date or a short vow in 0s and 1s — a message literally only the wearer can read at a glance. Knitters and cross-stitchers chart initials as binary stripes, and T-shirts bearing jokes like “there are only 10 types of people in the world: those who understand binary and those who don't” remain a reliable gift for the programmer in your life. (The joke, if it needs one: 10 in binary is 2.)</p>
+
+          <h2>Binary clocks and watches</h2>
+          <p>A binary clock displays the time not with hands or digits but with rows of lights: one row for hours, one for minutes, one for seconds, each light a bit whose place value you add up using the method from <a href="#/guide/how-to-read-binary">how to read binary numbers</a>. Reading one fluently takes a weekend of glances; after that, you own a clock that guests cannot read, which is either a feature or a bug depending on the guest. Phone apps and desk gadgets both exist, and building one from an inexpensive microcontroller kit is a beloved first electronics project.</p>
+
+          <h2>Classroom and party tricks</h2>
+          <p>Teachers love binary because it smuggles real mathematics into a game. Five volunteers holding cards with 16, 8, 4, 2 and 1 dots can “count” to 31 on one hand's worth of cards by flipping them face-up or face-down — and a whole class can then spell letters by holding up fingers as bits. The “guess your number” magic trick, where a performer identifies a chosen number from a few yes/no cards, is binary search wearing a top hat. At parties, a binary drinking-age joke or a coded quiz round (“decode this byte to find the next clue”) reliably outperforms another round of trivia.</p>
+
+          <h2>Binary tattoos: read this before the ink</h2>
+          <p>Binary tattoos are genuinely popular — a forearm band of 0s and 1s spelling a name, a date, or a defiant little sentence. They are also, uniquely among tattoo designs, <em>spellcheckable</em>, and the internet is full of cautionary tales: tattoos that say “Hl” instead of “Hi” because two digits were transposed, names missing their final letter, strings that decode to nothing at all. A binary tattoo with a typo is a spelling mistake that requires a computer to even notice — which makes it both funnier and sadder.</p>
+          <p>If you are getting one, follow the paranoid protocol:</p>
+          <ol>
+            <li><strong>Convert your exact text</strong> with the <a href="#/">converter</a> — final capitalisation, final spacing, nothing “close enough.”</li>
+            <li><strong>Decode it back</strong> using the binary to text tool on the same page. If the round trip does not return your exact text, something is wrong; fix it now, not at the studio.</li>
+            <li><strong>Count the bytes.</strong> An English name of five letters is five bytes — forty digits. If your design shows thirty-nine, a bit has gone missing.</li>
+            <li><strong>Bring a printout</strong>, not a screenshot of a screenshot, and ask the artist to stencil from it digit by digit. Then check the stencil against the printout before any needle touches skin.</li>
+            <li><strong>Decide about spaces.</strong> Tattoo designs often run the bytes together without gaps. That is fine visually — a decoder can still slice every eight digits — but it makes your own proofreading harder, so proofread the spaced version.</li>
+          </ol>
+          <p>Do all that, and your tattoo will say exactly what you meant it to say, forever — which is more than can be said for most tattoos in most languages.</p>
+
+          <h2>One more idea: binary art</h2>
+          <p>Finally, binary scales up into art. Posters print famous speeches as walls of 0s and 1s with a single hidden word picked out in colour; generative artists use bit patterns as woven textiles and architectural screens; musicians have encoded melodies as binary punch-cards for music boxes. The principle is always the one from our <a href="#/guide/what-is-binary-code">beginner's guide</a>: anything that can become numbers can become pattern. Your message, in other words, is a design material now. Use it well — and decode twice before you commit to anything permanent.</p>
+          <div class="next-guide">
+            <p><strong>Back to the tools:</strong> convert your name, a message or a date with the <a href="#/">text to binary converter</a>, and decode it back to be sure it says what you think it says.</p>
+          </div>
+        </article>
+      </div>
+
+      <!-- ============ ABOUT ============ -->
+      <div class="view" id="view-about">
+        <div class="page-head">
+          <p class="crumb"><a href="#/">Home</a> › About</p>
+          <h1>About TextToBinaryHub</h1>
+          <p class="standfirst">A small, free corner of the web devoted to the two hardest-working digits in history.</p>
+        </div>
+        <article class="prose">
+          <h2>What this site is</h2>
+          <p>TextToBinaryHub is a free online <a href="#/">text to binary converter</a> with a simple double purpose: give you a fast, reliable tool for turning text into binary code (and back again), and explain — in plain English, without assuming a computing degree — what is actually happening when you do. The converters live at the top of the home page. The explanations live in our <a href="#/guides">guides</a>, which cover everything from <a href="#/guide/what-is-binary-code">what binary code is</a> to <a href="#/guide/fun-ways-to-use-binary">checking a binary tattoo before it becomes permanent</a>.</p>
+          <h2>Why we built it</h2>
+          <p>Most converter sites treat binary as a party trick: a box, a button, no context. But binary is not a trick — it is the foundation layer of every digital thing, and the moment it clicks for someone, a whole stack of other ideas (file sizes, colour codes, character encodings, why computers “think” the way they do) suddenly becomes clear. We built TextToBinaryHub to be the page we wished existed when we first met the subject: the tool and the understanding on the same page, each making the other more useful.</p>
+          <h2>How the tools work</h2>
+          <p>Every conversion on this site happens <strong>entirely in your browser</strong>, using JavaScript on your own device. When you type text into the converter, no server receives it, no database stores it, and nothing is logged — you could disconnect from the internet after the page loads and every tool would keep working. Text is encoded as UTF-8 bytes (identical to classic ASCII for English text), and each byte is shown as eight binary digits. The details of that encoding are explained in our guide to <a href="#/guide/ascii-explained">how computers turn letters into binary</a>, and our <a href="#/privacy">privacy policy</a> describes the same no-collection approach in formal terms.</p>
+          <h2>Who it is for</h2>
+          <p>Students meeting binary in a computing class and wanting the idea in ordinary words. Teachers looking for examples that work the first time. Programmers who need a quick byte check without opening a terminal. Puzzle-makers, card-writers, jewellers and the tattoo-curious. If you have ever looked at a string of 0s and 1s and wondered what it says, this site is for you.</p>
+          <h2>Get in touch</h2>
+          <p>Found a mistake in a guide, a byte that converts wrongly, or a topic we should cover? We would genuinely like to know — the <a href="#/contact">contact page</a> explains how to reach us, and the <a href="#/faq">FAQ</a> answers the questions we hear most often.</p>
+        </article>
+      </div>
+
+      <!-- ============ FAQ ============ -->
+      <div class="view" id="view-faq">
+        <div class="page-head">
+          <p class="crumb"><a href="#/">Home</a> › FAQ</p>
+          <h1>Frequently Asked Questions</h1>
+          <p class="standfirst">The questions people ask most about binary code, this converter, and what the 0s and 1s actually mean.</p>
+        </div>
+        <article class="prose">
+          <div class="faq-item">
+            <h3>What is binary code in simple words?</h3>
+            <p>Binary is a way of writing numbers using only 0 and 1. Computers use it because their hardware is built from switches that are either off (0) or on (1). Letters are stored by agreeing a number for each letter — A is 65 — and storing that number in binary: <code>01000001</code>. Our <a href="#/guide/what-is-binary-code">beginner's guide</a> explains the idea fully.</p>
+          </div>
+          <div class="faq-item">
+            <h3>How do I convert text to binary?</h3>
+            <p>Type or paste your text into the <a href="#/">Text to Binary tool</a> at the top of the home page. The conversion happens as you type: each character becomes one 8-bit binary byte, separated by spaces. Use the Copy button to take the result with you.</p>
+          </div>
+          <div class="faq-item">
+            <h3>How do I translate binary back into English?</h3>
+            <p>Paste the binary into the Binary to Text decoder on the <a href="#/">home page</a>. It works with or without spaces between the bytes. If the input contains anything other than 0s, 1s and spaces, or its length is not a whole number of bytes, the tool will tell you what is wrong instead of guessing.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Why does every character take exactly 8 digits?</h3>
+            <p>Eight bits make one byte, and a byte holds 256 possible values — enough for every English character with room to spare. Padding every character to a full 8 bits (so A is <code>01000001</code>, not <code>1000001</code>) keeps the bytes uniform, which is what lets a decoder slice a long stream back into characters reliably.</p>
+          </div>
+          <div class="faq-item">
+            <h3>What is “Hello” in binary?</h3>
+            <p><code>01001000 01100101 01101100 01101100 01101111</code> — five bytes for five characters: H is 72, e is 101, l is 108 and o is 111 in ASCII. Try longer greetings in the <a href="#/">converter</a> and watch the byte count match the character count.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Why do some characters produce more than one byte?</h3>
+            <p>Classic ASCII covers English only. Characters beyond it — é, Arabic or Urdu letters, Chinese characters, emoji — are stored using UTF-8, which uses two to four bytes for them. The tool's byte counter shows this: when bytes outnumber characters, some characters needed the extra room. The <a href="#/guide/ascii-explained">ASCII guide</a> tells the whole story.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Is binary code a secret code?</h3>
+            <p>No — binary is an <em>encoding</em>, not encryption. Anyone who recognises it can decode it in seconds with a tool like ours. It is great for games, cards and surprises, but never use it to protect anything genuinely private. More on this in <a href="#/guide/fun-ways-to-use-binary">fun ways to use binary code</a>.</p>
+          </div>
+          <div class="faq-item">
+            <h3>What is the difference between binary and hexadecimal?</h3>
+            <p>They are two ways of writing the same numbers. Binary is base 2; hexadecimal is base 16, using digits 0–9 and letters A–F. One hex digit equals exactly four bits, so hex is a compact shorthand for binary — which is why web colour codes like #FF5733 are hex. See <a href="#/guide/binary-vs-hexadecimal">binary vs hexadecimal</a> for the full comparison.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Is this converter free? Is my text uploaded anywhere?</h3>
+            <p>Yes, completely free, with no sign-up. And no: all conversion happens in your browser with JavaScript. Your text never leaves your device, is never stored, and cannot be seen by us. Our <a href="#/privacy">privacy policy</a> covers this in detail.</p>
+          </div>
+          <div class="faq-item">
+            <h3>How can I learn to read binary myself?</h3>
+            <p>Learn the doubling place values — 1, 2, 4, 8, 16, 32, 64, 128 — then add up the places where a byte has a 1. <code>01101000</code> is 64 + 32 + 8 = 104. Our step-by-step <a href="#/guide/how-to-read-binary">guide to reading binary numbers</a> includes practice examples and the common mistakes to avoid.</p>
+          </div>
+        </article>
+      </div>
+
+      <!-- ============ CONTACT ============ -->
+      <div class="view" id="view-contact">
+        <div class="page-head">
+          <p class="crumb"><a href="#/">Home</a> › Contact</p>
+          <h1>Contact Us</h1>
+          <p class="standfirst">Corrections, suggestions and questions are all welcome.</p>
+        </div>
+        <article class="prose">
+          <h2>Email us</h2>
+          <p>The fastest way to reach the TextToBinaryHub team is by email at <a href="mailto:contact@texttobinaryhub.github.io">contact@texttobinaryhub.github.io</a>. We read everything that arrives, and we reply to most messages within a couple of working days.</p>
+          <h2>What to write about</h2>
+          <ul>
+            <li><strong>A conversion that looks wrong.</strong> Please include the exact text you typed and the output you received, so we can reproduce it.</li>
+            <li><strong>A mistake in a guide.</strong> Tell us which guide and which paragraph — accuracy matters more to us than pride.</li>
+            <li><strong>A topic you'd like covered.</strong> Reader questions have a habit of becoming our best guides.</li>
+            <li><strong>Anything else</strong> about binary, ASCII or the site itself.</li>
+          </ul>
+          <h2>Before you write</h2>
+          <p>Quick questions about how binary works are often answered already in our <a href="#/faq">frequently asked questions</a> or the <a href="#/guides">guides</a> — a two-minute look there may save you an email round-trip. And a gentle reminder: because the converters run entirely in your browser, we never see the text you convert, so we cannot recover or check a conversion unless you paste it into your message yourself.</p>
+        </article>
+      </div>
+
+      <!-- ============ PRIVACY ============ -->
+      <div class="view" id="view-privacy">
+        <div class="page-head">
+          <p class="crumb"><a href="#/">Home</a> › Privacy Policy</p>
+          <h1>Privacy Policy</h1>
+          <p class="standfirst">Last updated: 22 November 2026. In short: the converters run on your device, and we do not collect what you type.</p>
+        </div>
+        <article class="prose">
+          <h2>How the tools handle your text</h2>
+          <p>Every tool on TextToBinaryHub — the text to binary converter, the binary to text decoder, and the hex and ASCII tools — runs entirely in your web browser using JavaScript. Text you type or paste is processed on your own device. It is not transmitted to us, not stored on any server, and not written to any database or log. When you close or refresh the page, the text is gone. There are no user accounts on this site, and we never ask for your name, email address or any other personal information in order to use the tools.</p>
+          <h2>Information we receive automatically</h2>
+          <p>Like almost every website, the hosting infrastructure that serves these pages may record standard technical information in server logs — such as the page requested, the time of the request, and the type of browser used — for the purposes of operating, securing and measuring the site. This information does not include the content you enter into the converters, which never leaves your device.</p>
+          <h2>Cookies</h2>
+          <p>TextToBinaryHub does not set cookies for advertising or cross-site tracking. If analytics or advertising services are added to the site in future, this policy will be updated to describe them before or at the time they are introduced, and any cookies they set will be governed by the respective providers' policies.</p>
+          <h2>Third-party links</h2>
+          <p>Pages on this site may link to external websites for reference. We are not responsible for the privacy practices or content of those sites, and we encourage you to read their policies when you visit them.</p>
+          <h2>Children's privacy</h2>
+          <p>This site is an educational tool suitable for general audiences, including students learning about computing. Because we do not collect personal information from any visitor, we do not knowingly collect personal information from children.</p>
+          <h2>Changes to this policy</h2>
+          <p>If this policy changes, the updated version will be published on this page with a revised date at the top. Continued use of the site after a change means you accept the updated policy.</p>
+          <h2>Contact</h2>
+          <p>Questions about this policy can be sent through our <a href="#/contact">contact page</a>.</p>
+        </article>
+      </div>
+
+      <!-- ============ TERMS ============ -->
+      <div class="view" id="view-terms">
+        <div class="page-head">
+          <p class="crumb"><a href="#/">Home</a> › Terms of Use</p>
+          <h1>Terms of Use</h1>
+          <p class="standfirst">Last updated: 22 November 2026. The plain-English rules for using TextToBinaryHub.</p>
+        </div>
+        <article class="prose">
+          <h2>Acceptance of these terms</h2>
+          <p>By using TextToBinaryHub, you agree to these terms. If you do not agree with any part of them, please do not use the site. We may update these terms from time to time; the version published on this page is the current one.</p>
+          <h2>The service</h2>
+          <p>TextToBinaryHub provides free online tools for converting between text, binary code, hexadecimal and ASCII character codes, together with educational guides about binary and related topics. The tools are provided for personal, educational and professional use, and you may use the output they produce — including in printed designs, cards, artwork and tattoos — without asking our permission.</p>
+          <h2>Accuracy</h2>
+          <p>We work hard to make the converters and guides accurate, and the conversion methods used are the standard ones (UTF-8 encoding with 8-bit bytes). However, the site is provided “as is”, without warranties of any kind. Where a converted result matters — a printed product, an engraving, or anything permanent — you are responsible for verifying it, for example by decoding it back with our decoder before use, as described in our guide on <a href="#/guide/fun-ways-to-use-binary">fun ways to use binary code</a>.</p>
+          <h2>Acceptable use</h2>
+          <p>You agree not to use this site to break the law, to infringe the rights of others, or to attempt to disrupt, overload or gain unauthorised access to the site or its hosting infrastructure. Automated use that places an unreasonable load on the site is not permitted.</p>
+          <h2>Intellectual property</h2>
+          <p>The text, guides and design of this site belong to TextToBinaryHub unless otherwise stated, and may not be republished wholesale without permission. Brief quotations with a link back to the original page are welcome. The binary, hex and ASCII output generated from your own text is yours to use as you wish.</p>
+          <h2>Liability</h2>
+          <p>To the fullest extent permitted by law, TextToBinaryHub is not liable for any loss or damage arising from your use of the site or reliance on its output, including errors in converted material used in third-party products or permanent artwork.</p>
+          <h2>Contact</h2>
+          <p>Questions about these terms can be sent through our <a href="#/contact">contact page</a>.</p>
+        </article>
+      </div>
+    </main>
+
+    <footer class="site">
+      <div class="wrap foot">
+        <div>
+          <h4>TextToBinaryHub</h4>
+          <p>Free text to binary converter and binary decoder, with plain-English guides to how computers turn letters into 0s and 1s. Everything runs in your browser — your text never leaves your device.</p>
+        </div>
+        <div>
+          <h4>Guides</h4>
+          <ul>
+            <li><a href="#/guide/what-is-binary-code">What Is Binary Code?</a></li>
+            <li><a href="#/guide/ascii-explained">ASCII Explained</a></li>
+            <li><a href="#/guide/how-to-read-binary">How to Read Binary</a></li>
+            <li><a href="#/guide/binary-vs-hexadecimal">Binary vs Hexadecimal</a></li>
+            <li><a href="#/guide/fun-ways-to-use-binary">Fun Ways to Use Binary</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Site</h4>
+          <ul>
+            <li><a href="#/">Converter</a></li>
+            <li><a href="#/about">About</a></li>
+            <li><a href="#/faq">FAQ</a></li>
+            <li><a href="#/contact">Contact</a></li>
+            <li><a href="#/privacy">Privacy Policy</a></li>
+            <li><a href="#/terms">Terms of Use</a></li>
+          </ul>
+        </div>
+        <div class="legal">
+          <span>© 2026 TextToBinaryHub. All rights reserved.</span>
+          <span>Binary is an encoding, not encryption — anyone can decode it.</span>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        "use strict";
+
+        /* ---------- Encoding helpers ---------- */
+        var encoder = new TextEncoder();
+        var decoder = new TextDecoder("utf-8", { fatal: false });
+
+        function textToBytes(text) {
+          return Array.prototype.slice.call(encoder.encode(text));
+        }
+        function charCount(text) {
+          return Array.from(text).length;
+        }
+        function setText(id, value) {
+          document.getElementById(id).textContent = value;
+        }
+
+        /* ---------- Text -> Binary ---------- */
+        var t2bIn = document.getElementById("t2b-in");
+        function runT2B() {
+          var text = t2bIn.value;
+          var bytes = textToBytes(text);
+          setText("t2b-out", bytes.map(function (b) {
+            return ("00000000" + b.toString(2)).slice(-8);
+          }).join(" "));
+          setText("t2b-chars", String(charCount(text)));
+          setText("t2b-bytes", String(bytes.length));
+          setText("t2b-bits", String(bytes.length * 8));
+        }
+        t2bIn.addEventListener("input", runT2B);
+        document.getElementById("t2b-clear").addEventListener("click", function () {
+          t2bIn.value = ""; runT2B(); t2bIn.focus();
+        });
+        document.getElementById("t2b-send").addEventListener("click", function () {
+          var out = document.getElementById("t2b-out").textContent;
+          var bIn = document.getElementById("b2t-in");
+          bIn.value = out; runB2T();
+          bIn.scrollIntoView({ behavior: "smooth", block: "center" });
+        });
+
+        /* ---------- Binary -> Text ---------- */
+        var b2tIn = document.getElementById("b2t-in");
+        var b2tErr = document.getElementById("b2t-err");
+        function runB2T() {
+          var raw = b2tIn.value;
+          var bits = raw.replace(/\s+/g, "");
+          setText("b2t-bits", String(bits.length));
+          b2tErr.textContent = ""; b2tErr.classList.remove("show");
+          if (bits.length === 0) {
+            setText("b2t-out", ""); setText("b2t-bytes", "0"); setText("b2t-chars", "0");
+            return;
+          }
+          if (!/^[01]+$/.test(bits)) {
+            b2tErr.textContent = "That input contains characters other than 0, 1 and spaces. Binary code uses only 0s and 1s — check for stray letters or punctuation.";
+            b2tErr.classList.add("show");
+            setText("b2t-out", ""); setText("b2t-bytes", "0"); setText("b2t-chars", "0");
+            return;
+          }
+          if (bits.length % 8 !== 0) {
+            b2tErr.textContent = "You have entered " + bits.length + " bits, which is not a whole number of bytes. Binary text comes in groups of 8 bits — " + (bits.length % 8) + " extra bit(s) may have crept in, or some are missing.";
+            b2tErr.classList.add("show");
+            setText("b2t-out", ""); setText("b2t-bytes", "0"); setText("b2t-chars", "0");
+            return;
+          }
+          var bytes = [];
+          for (var i = 0; i < bits.length; i += 8) {
+            bytes.push(parseInt(bits.substr(i, 8), 2));
+          }
+          var text = decoder.decode(new Uint8Array(bytes));
+          setText("b2t-out", text);
+          setText("b2t-bytes", String(bytes.length));
+          setText("b2t-chars", String(charCount(text)));
+        }
+        b2tIn.addEventListener("input", runB2T);
+        document.getElementById("b2t-clear").addEventListener("click", function () {
+          b2tIn.value = ""; runB2T(); b2tIn.focus();
+        });
+
+        /* ---------- Text -> Hex ---------- */
+        var hexIn = document.getElementById("hex-in");
+        function runHex() {
+          var bytes = textToBytes(hexIn.value);
+          setText("hex-out", bytes.map(function (b) {
+            return ("0" + b.toString(16).toUpperCase()).slice(-2);
+          }).join(" "));
+          setText("hex-chars", String(charCount(hexIn.value)));
+          setText("hex-bytes", String(bytes.length));
+        }
+        hexIn.addEventListener("input", runHex);
+        document.getElementById("hex-clear").addEventListener("click", function () {
+          hexIn.value = ""; runHex(); hexIn.focus();
+        });
+
+        /* ---------- Text -> ASCII codes ---------- */
+        var asciiIn = document.getElementById("ascii-in");
+        function runAscii() {
+          var chars = Array.from(asciiIn.value);
+          setText("ascii-out", chars.map(function (ch) {
+            return String(ch.codePointAt(0));
+          }).join(" "));
+          setText("ascii-chars", String(chars.length));
+          setText("ascii-codes", String(chars.length));
+        }
+        asciiIn.addEventListener("input", runAscii);
+        document.getElementById("ascii-clear").addEventListener("click", function () {
+          asciiIn.value = ""; runAscii(); asciiIn.focus();
+        });
+
+        /* ---------- Copy buttons ---------- */
+        function fallbackCopy(text) {
+          var ta = document.createElement("textarea");
+          ta.value = text;
+          ta.style.position = "fixed"; ta.style.opacity = "0";
+          document.body.appendChild(ta);
+          ta.select();
+          try { document.execCommand("copy"); } catch (e) {}
+          document.body.removeChild(ta);
+        }
+        var copyButtons = document.querySelectorAll("[data-copy]");
+        Array.prototype.forEach.call(copyButtons, function (btn) {
+          btn.addEventListener("click", function () {
+            var target = document.getElementById(btn.getAttribute("data-copy"));
+            var text = target ? target.textContent : "";
+            if (!text) { return; }
+            var original = btn.textContent;
+            function done() {
+              btn.textContent = "Copied!";
+              setTimeout(function () { btn.textContent = original; }, 1600);
+            }
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              navigator.clipboard.writeText(text).then(done, function () { fallbackCopy(text); done(); });
+            } else {
+              fallbackCopy(text); done();
+            }
+          });
+        });
+
+        /* ---------- Hash routing ---------- */
+        var routes = {
+          "": "view-home",
+          "/": "view-home",
+          "/guides": "view-guides",
+          "/guide/what-is-binary-code": "view-guide-1",
+          "/guide/ascii-explained": "view-guide-2",
+          "/guide/how-to-read-binary": "view-guide-3",
+          "/guide/binary-vs-hexadecimal": "view-guide-4",
+          "/guide/fun-ways-to-use-binary": "view-guide-5",
+          "/about": "view-about",
+          "/faq": "view-faq",
+          "/contact": "view-contact",
+          "/privacy": "view-privacy",
+          "/terms": "view-terms"
+        };
+        var titles = {
+          "view-home": "Text to Binary Converter — Free Online Tool | TextToBinaryHub",
+          "view-guides": "Binary Code Guides | TextToBinaryHub",
+          "view-guide-1": "What Is Binary Code? A Beginner's Guide | TextToBinaryHub",
+          "view-guide-2": "How Computers Turn Letters into Binary (ASCII Explained) | TextToBinaryHub",
+          "view-guide-3": "How to Read Binary Numbers | TextToBinaryHub",
+          "view-guide-4": "Binary vs Hexadecimal: What Is the Difference? | TextToBinaryHub",
+          "view-guide-5": "Fun Ways to Use Binary Code (Names, Messages, Tattoos) | TextToBinaryHub",
+          "view-about": "About | TextToBinaryHub",
+          "view-faq": "FAQ | TextToBinaryHub",
+          "view-contact": "Contact | TextToBinaryHub",
+          "view-privacy": "Privacy Policy | TextToBinaryHub",
+          "view-terms": "Terms of Use | TextToBinaryHub"
+        };
+        function navKeyFor(viewId) {
+          if (viewId === "view-home") return "home";
+          if (viewId.indexOf("view-guide") === 0) return "guides";
+          return viewId.replace("view-", "");
+        }
+        function route() {
+          var hash = window.location.hash.replace(/^#/, "");
+          var viewId = routes.hasOwnProperty(hash) ? routes[hash] : "view-home";
+          var views = document.querySelectorAll(".view");
+          Array.prototype.forEach.call(views, function (v) {
+            v.classList.toggle("active", v.id === viewId);
+          });
+          document.title = titles[viewId] || titles["view-home"];
+          var key = navKeyFor(viewId);
+          var links = document.querySelectorAll("[data-nav]");
+          Array.prototype.forEach.call(links, function (a) {
+            a.classList.toggle("active", a.getAttribute("data-nav") === key);
+          });
+          window.scrollTo(0, 0);
+        }
+        window.addEventListener("hashchange", route);
+
+        /* "ASCII codes tool" link inside prose: go home, then scroll to the tool */
+        var scrollLinks = document.querySelectorAll("[data-scroll-tool]");
+        Array.prototype.forEach.call(scrollLinks, function (a) {
+          a.addEventListener("click", function () {
+            setTimeout(function () {
+              var el = document.getElementById("ascii-in");
+              if (el) { el.scrollIntoView({ behavior: "smooth", block: "center" }); }
+            }, 60);
+          });
+        });
+
+        /* ---------- Init ---------- */
+        t2bIn.value = "Hi";
+        runT2B(); runB2T(); runHex(); runAscii();
+        route();
+      })();
+    </script>
+  </body>
+</html>
